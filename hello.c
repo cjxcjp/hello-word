@@ -11,5 +11,5 @@ cur1=cur1_easy_init();
  if(res!=CURLE_OK)
  fprintf(stderr, "cur1_easy_perform（）failed: %s\n",cur1_easy_strerror(res));
  cur1 _easy_cleanup(curl);
- return0;
+ return 0;
 }
