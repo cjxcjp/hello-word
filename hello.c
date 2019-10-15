@@ -1,15 +1,17 @@
-#include <stdio. h>
- #include <cur1/curl. h>
+#include <stdio.h>
+ #include <curl/curl.h>
  
  int main(void)
- CURL*cur1;
+ {
+  CURL *curl;
  CURLcode res;
-cur1=cur1_easy_init();
+curl=curl_easy_init();
  if(curl){
- cur1_easy_setopt(cur1,  CURLOPT_URL, "http: //myip. ipip.net/") ;
- res=cur1_easy_perform( cur1)；
+ curl_easy_setopt(curl,CURLOPT_URL, "http://myip.ipip.net/") ;
+ res=curl_easy_perform(curl)；
  if(res!=CURLE_OK)
- fprintf(stderr, "cur1_easy_perform（）failed: %s\n",cur1_easy_strerror(res));
- cur1 _easy_cleanup(curl);
+ fprintf(stderr, "curl_easy_perform（）failed: %s\n",curl_easy_strerror(res));
+ curl_easy_cleanup(curl);
+ }
  return 0;
 }
